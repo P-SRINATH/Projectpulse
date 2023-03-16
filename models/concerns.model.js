@@ -1,0 +1,30 @@
+const sequelize=require('../db/db.config');
+const {DataTypes}=require("sequelize");
+exports.ProjectConcerns=sequelize.define('Project_concerns',{
+    concern_description:{
+        type:DataTypes.STRING
+    },
+    concern_raised_by:{
+        type:DataTypes.STRING
+    },
+    concern_raised_on_date:{
+        type:DataTypes.DATE
+    },
+    severity_of_concern:{
+        type:DataTypes.STRING
+    },
+    concern_raised_internally:{
+        type:DataTypes.BOOLEAN
+    },
+    status_of_concern:{
+        type:DataTypes.STRING
+    },
+    concern_mitigated_on_date:{
+        type:DataTypes.DATE
+    }
+},{
+    createdAt:false,
+    updatedAt:false,
+    timestamps:false,
+    freezeTableName:true
+});

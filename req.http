@@ -1,0 +1,190 @@
+######################################################################################################## SUPER ADMIN 
+POST http://localhost:4000/super-admin/superAdminLogin
+Content-Type: application/json
+
+{
+    "user_email":"superadmin@westagilelabs.com",
+    "user_password":"superadmin"
+}
+###  
+GET http://localhost:4000/super-admin/viewAllUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+###
+PUT http://localhost:4000/super-admin/createUserRole
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+Content-Type: application/json
+
+{
+    "user_email":"sashi@westagilelabs.com",
+    "user_role":"Admin"
+}
+###
+GET http://localhost:4000/super-admin/viewAllProjects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+###
+POST http://localhost:4000/super-admin/updatePassword
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+Content-Type: application/json
+
+{
+    "user_email":"aryan@westagilelabs.com",
+    "user_password":"aryan123"
+}
+###
+
+######################################################################################################## USER 
+POST http://localhost:4000/user/registerUser
+Content-Type: application/json
+
+{
+    "user_email":"sashi@westagilelabs.com",
+    "user_password":"sashi123"
+}
+###
+POST http://localhost:4000/user/loginUser
+Content-Type: application/json
+
+{
+    "user_email":"neeraj@westagilelabs.com",
+    "user_password":"neeraj123"
+}
+###
+POST http://localhost:4000/user/forgotPassword
+Content-Type: application/json
+
+{
+    "user_email":"pvlnsrinath@gmail.com"
+}
+###
+POST http://localhost:4000/user/resetPassword/pvlnsrinath@gmail.com
+Content-Type: application/json
+
+{
+    "otp":187383,
+    "password":"srinath123"
+}
+######################################################################################################## GDO 
+POST http://localhost:4000/gdo/addProjectTeam
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc4ODE0MzY5LCJleHAiOjE2Nzg5MDA3Njl9.80wo42Fpt-lD7I3fAszNWCK9-Mbdqzd7rkmmgWigTfs
+Content-Type: application/json
+
+{
+    "resource_name":"soumya@westagilelabs.com",
+    "role_in_project":"backend-developer",
+    "project_start_date":"2010-10-12",
+    "project_end_date":"2010-12-11",
+    "project_status":"active",
+    "billing_status":"billed",
+    "exposed_to_customer":false,
+    "allocation_type":"required",
+    "project_id":1
+
+}
+###
+GET http://localhost:4000/gdo/getPortfolioDashboard/pramod@westagilelabs.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc4ODE0MzY5LCJleHAiOjE2Nzg5MDA3Njl9.80wo42Fpt-lD7I3fAszNWCK9-Mbdqzd7rkmmgWigTfs
+###
+GET http://localhost:4000/gdo/getProjectDetails/pramod@westagilelabs.com/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc4ODE0MzY5LCJleHAiOjE2Nzg5MDA3Njl9.80wo42Fpt-lD7I3fAszNWCK9-Mbdqzd7rkmmgWigTfs
+
+######################################################################################################## ADMIN 
+POST http://localhost:4000/admin/createProject
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+Content-Type: application/json
+
+{
+    "project_id":1,
+    "gdoemail":"pramod@westagilelabs.com",
+    "project_manager_email":"neeraj@westagilelabs.com",
+    "project_name":"dummytest",
+    "project_client":"tata",
+    "client_account":104,
+    "client_account_manager":"tatas",
+    "status_of_project":"Sales",
+    "project_start_date":"2010-08-17",
+    "project_end_date":"2010-11-21",
+    "project_fitness":"amber",
+    "domain_of_project":"Android",
+    "type_of_project":"Appdevlopment"
+}
+
+###
+GET http://localhost:4000/admin/getProjectDetails
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+###
+GET http://localhost:4000/admin/getProjectConcerns
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+###
+GET http://localhost:4000/admin/getProjectUpdates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+###
+GET http://localhost:4000/admin/getProjectResources
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+###
+GET http://localhost:4000/admin/getSpecificProjectDetails/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+
+####################################################################################################### PROJECT MANAGER
+POST http://localhost:4000/projectManager/createProjectConcerns
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+Content-Type: application/json
+
+{
+    "project_id":1,
+    "concern_description":"bug in typed code",
+    "concern_raised_by":"kumar",
+    "concern_raised_on_date":"2010-12-11",
+    "severity_of_concern":"Minor",
+    "concern_raised_internal":true,
+    "status_of_concern":"inprogress",
+    "concern_mitigated_on_date":"2010-12-11"
+
+}
+###
+POST http://localhost:4000/projectManager/createProjectUpdates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+Content-Type: application/json
+
+{
+    "project_id":1,
+    "date":"2010-11-22",
+    "project_status_update":"inprogress-backend",
+    "resourcing_status":"green",
+    "quality_status":"green",
+    "waiting_for_client":"no"
+}
+###
+GET http://localhost:4000/projectManager/getProjectConcerns
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+###
+GET http://localhost:4000/projectManager/getProjectUpdates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+###
+GET http://localhost:4000/projectManager/getProjectByManager/neeraj@westagilelabs.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+###
+GET http://localhost:4000/projectManager/getSpecificProjectDetails/neeraj@westagilelabs.com/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+####################################################################################################### CRUD OPERATIONS
+PUT http://localhost:4000/projectManager/updateProjectConcerns
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg3MzIwOTgsImV4cCI6MTY3ODgxODQ5OH0.JFt2tm3-ZapNHOlTallA2G6gRpJtFzS2pOzO2cZEVQY
+Content-Type: application/json
+
+{
+    "id":2,
+    "concern_description":"bug in client side server code",
+    "concern_raised_internally":0,
+    "status_of_concern":"Resolved"
+}
+###
+PUT http://localhost:4000/projectManager/updateProjectUpdates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg3MzIwOTgsImV4cCI6MTY3ODgxODQ5OH0.JFt2tm3-ZapNHOlTallA2G6gRpJtFzS2pOzO2cZEVQY
+Content-Type: application/json
+
+{
+    "id":2,
+    "project_status_update":"completed-backend",
+    "waiting_for_client":"yes"
+}
+
+#######################################################################################################
