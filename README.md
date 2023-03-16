@@ -68,3 +68,9 @@ Project Manager
  6.Update the Project updates
  
  ```
+User
+```
+1.Register User
+2.Login User
+3.Forgot Password
+4.Reset Password
