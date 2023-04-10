@@ -20,6 +20,6 @@ UserApp.post('/loginUser',loginUser)
 UserApp.post('/forgotPassword',forgotPassword)
 
 //For a user to reset the password 
-UserApp.post('/resetPassword/:email',resetPassword)
+UserApp.post('/resetPassword',resetPassword)
 
 module.exports=UserApp;

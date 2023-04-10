@@ -8,19 +8,19 @@ Content-Type: application/json
 }
 ###  
 GET http://localhost:4000/super-admin/viewAllUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2ODAyMzk0OTAsImV4cCI6MTY4MDMyNTg5MH0.yeTzF1_bvp_9ZCFaDnI7yTx0_0xhDEgBlNNvQghfTFw
 ###
 PUT http://localhost:4000/super-admin/createUserRole
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzk5OTc3MTAsImV4cCI6MTY4MDA4NDExMH0.0KY8s_04NRq9RXqdpB_4QI9y33NZ5OCUTUw5BiDZU8o
 Content-Type: application/json
 
 {
-    "user_email":"sashi@westagilelabs.com",
-    "user_role":"Admin"
+    "user_email":"rudra@westagilelabs.com",
+    "user_role":"ProjectManager"
 }
 ###
 GET http://localhost:4000/super-admin/viewAllProjects
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2ODAyMzk0OTAsImV4cCI6MTY4MDMyNTg5MH0.yeTzF1_bvp_9ZCFaDnI7yTx0_0xhDEgBlNNvQghfTFw
 ###
 POST http://localhost:4000/super-admin/updatePassword
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic3VwZXJhZG1pbkB3ZXN0YWdpbGVsYWJzLmNvbSIsInVzZXJfcm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE2Nzg4MTM3ODcsImV4cCI6MTY3ODkwMDE4N30.ENb6s6udPdT5xHcgQvPokdx7_IBsrcV2x0FekJmc6Zc
@@ -45,8 +45,8 @@ POST http://localhost:4000/user/loginUser
 Content-Type: application/json
 
 {
-    "user_email":"neeraj@westagilelabs.com",
-    "user_password":"neeraj123"
+    "user_email":"pramod@westagilelabs.com",
+    "user_password":"pramod123"
 }
 ###
 POST http://localhost:4000/user/forgotPassword
@@ -56,16 +56,17 @@ Content-Type: application/json
     "user_email":"pvlnsrinath@gmail.com"
 }
 ###
-POST http://localhost:4000/user/resetPassword/pvlnsrinath@gmail.com
+POST http://localhost:4000/user/resetPassword
 Content-Type: application/json
 
 {
-    "otp":187383,
-    "password":"srinath123"
+    "email":"pvlnsrinath@gmail.com",
+    "otp":402118,
+    "password":"srinath12"
 }
 ######################################################################################################## GDO 
 POST http://localhost:4000/gdo/addProjectTeam
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc4ODE0MzY5LCJleHAiOjE2Nzg5MDA3Njl9.80wo42Fpt-lD7I3fAszNWCK9-Mbdqzd7rkmmgWigTfs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc5OTg4MDQ4LCJleHAiOjE2ODAwNzQ0NDh9.78Axjoqh0L-fdhEDHZyb94J1Wh44xGQIBKb3urMr0Cs
 Content-Type: application/json
 
 {
@@ -82,47 +83,67 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:4000/gdo/getPortfolioDashboard/pramod@westagilelabs.com
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc4ODE0MzY5LCJleHAiOjE2Nzg5MDA3Njl9.80wo42Fpt-lD7I3fAszNWCK9-Mbdqzd7rkmmgWigTfs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc5OTg4MDQ4LCJleHAiOjE2ODAwNzQ0NDh9.78Axjoqh0L-fdhEDHZyb94J1Wh44xGQIBKb3urMr0Cs
 ###
 GET http://localhost:4000/gdo/getProjectDetails/pramod@westagilelabs.com/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjc4ODE0MzY5LCJleHAiOjE2Nzg5MDA3Njl9.80wo42Fpt-lD7I3fAszNWCK9-Mbdqzd7rkmmgWigTfs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjgwMTY0MzMzLCJleHAiOjE2ODAyNTA3MzN9.9mt3yXrzZLtyou0NkdK1C1iypkysVXb3cOJD5ORdMDk
 
-######################################################################################################## ADMIN 
-POST http://localhost:4000/admin/createProject
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+###
+POST http://localhost:4000/gdo/resourceRequest
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjgxMTI1ODc4LCJleHAiOjE2ODEyMTIyNzh9.KfD-L3AT9nlyCtppqbOr71MZKDkv5KXOMD35iENp2tE
 Content-Type: application/json
 
 {
-    "project_id":1,
-    "gdoemail":"pramod@westagilelabs.com",
-    "project_manager_email":"neeraj@westagilelabs.com",
-    "project_name":"dummytest",
-    "project_client":"tata",
-    "client_account":104,
-    "client_account_manager":"tatas",
-    "status_of_project":"Sales",
-    "project_start_date":"2010-08-17",
-    "project_end_date":"2010-11-21",
-    "project_fitness":"amber",
-    "domain_of_project":"Android",
-    "type_of_project":"Appdevlopment"
+    "id": 3,
+    "request_raised_by":"murali",
+    "project_id":2,
+    "resource_desc":"4 resource needed"
+}
+###
+GET http://localhost:4000/gdo/displayResourceRequest
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoicHJhbW9kQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiR0RPIiwiaWF0IjoxNjgxMTI1ODc4LCJleHAiOjE2ODEyMTIyNzh9.KfD-L3AT9nlyCtppqbOr71MZKDkv5KXOMD35iENp2tE
+
+######################################################################################################## ADMIN 
+POST http://localhost:4000/admin/createProject
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDIzOTQzOCwiZXhwIjoxNjgwMzI1ODM4fQ.YKJDYz7ITMs0_sJdiucVtDJuujBXzN2CppDUOsJ7GZQ
+Content-Type: application/json
+
+{
+    "project_id":3,
+    "gdoemail":"pvlnsrinath@gmail.com",
+    "project_manager_email":"rudra@westagilelabs.com",
+    "project_name":"dummytest3",
+    "project_client":"skoda",
+    "client_account":110,
+    "client_account_manager":"mahindra",
+    "status_of_project":"post-sales",
+    "project_start_date":"2010-05-11",
+    "project_end_date":"2010-11-22",
+    "project_fitness":"green",
+    "domain_of_project":"Web",
+    "type_of_project":"Designing"
 }
 
 ###
 GET http://localhost:4000/admin/getProjectDetails
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDAwNTg2OSwiZXhwIjoxNjgwMDkyMjY5fQ.0ME9W6HIPkY2K6ReTn-3WIUIKFUJGstbThbSIfGsI9c
 ###
 GET http://localhost:4000/admin/getProjectConcerns
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDE4OTU5MiwiZXhwIjoxNjgwMjc1OTkyfQ.csxjQ1RmNB0pBK0sOLjnY2kxgYGlR3bq_pxEau3cELI
 ###
 GET http://localhost:4000/admin/getProjectUpdates
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
-###
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDE4OTU5MiwiZXhwIjoxNjgwMjc1OTkyfQ.csxjQ1RmNB0pBK0sOLjnY2kxgYGlR3bq_pxEau3cELI
+
+####
 GET http://localhost:4000/admin/getProjectResources
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDE4OTU5MiwiZXhwIjoxNjgwMjc1OTkyfQ.csxjQ1RmNB0pBK0sOLjnY2kxgYGlR3bq_pxEau3cELI
 ###
-GET http://localhost:4000/admin/getSpecificProjectDetails/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY3ODgxNDU1MiwiZXhwIjoxNjc4OTAwOTUyfQ.TQQMDdkii2jxV9gj3nsqJoxl4lZUMQvoiFYUI-__5Wk
+GET http://localhost:4000/admin/getSpecificProjectDetails/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDIzOTQzOCwiZXhwIjoxNjgwMzI1ODM4fQ.YKJDYz7ITMs0_sJdiucVtDJuujBXzN2CppDUOsJ7GZQ
+
+###
+DELETE http://localhost:4000/admin/deleteProject/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoic2FzaGlAd2VzdGFnaWxlbGFicy5jb20iLCJ1c2VyX3JvbGUiOiJBZG1pbiIsImlhdCI6MTY4MDIzOTQzOCwiZXhwIjoxNjgwMzI1ODM4fQ.YKJDYz7ITMs0_sJdiucVtDJuujBXzN2CppDUOsJ7GZQ
 
 ####################################################################################################### PROJECT MANAGER
 POST http://localhost:4000/projectManager/createProjectConcerns
@@ -155,24 +176,23 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:4000/projectManager/getProjectConcerns
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2ODA2MDAzODAsImV4cCI6MTY4MDY4Njc4MH0._x0hFhMo35pZf_q2Dfy-qpR_lXvP0FA02shkE6QnKyU
 ###
 GET http://localhost:4000/projectManager/getProjectUpdates
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2ODAwNzQ0NjcsImV4cCI6MTY4MDE2MDg2N30.Rymtt5JuDGa0ocll1chuuE6hBUWeoVttlTm6GvBctKc
 ###
 GET http://localhost:4000/projectManager/getProjectByManager/neeraj@westagilelabs.com
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2ODAxOTM4OTgsImV4cCI6MTY4MDI4MDI5OH0.MzE-ueW2v9fr8BhTQGLG53rrrdBdejAOcfnivFIxYz0
 ###
 GET http://localhost:4000/projectManager/getSpecificProjectDetails/neeraj@westagilelabs.com/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg4MTUxNTUsImV4cCI6MTY3ODkwMTU1NX0.QpS1W9LW3KAjileIMkWrMCz28Tl0QFE5v9bIb3rynDc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2ODA1ODYyMDQsImV4cCI6MTY4MDY3MjYwNH0.voaGDpjjvlkJQVXDCmSaVy14YnvJnhloa_y03puqPs4
 ####################################################################################################### CRUD OPERATIONS
-PUT http://localhost:4000/projectManager/updateProjectConcerns
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2Nzg3MzIwOTgsImV4cCI6MTY3ODgxODQ5OH0.JFt2tm3-ZapNHOlTallA2G6gRpJtFzS2pOzO2cZEVQY
+PUT http://localhost:4000/projectManager/updateProjectConcerns/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibmVlcmFqQHdlc3RhZ2lsZWxhYnMuY29tIiwidXNlcl9yb2xlIjoiUHJvamVjdE1hbmFnZXIiLCJpYXQiOjE2ODA2MDAzODAsImV4cCI6MTY4MDY4Njc4MH0._x0hFhMo35pZf_q2Dfy-qpR_lXvP0FA02shkE6QnKyU
 Content-Type: application/json
 
 {
-    "id":2,
-    "concern_description":"bug in client side server code",
+    "concern_description":"bug in server side server code",
     "concern_raised_internally":0,
     "status_of_concern":"Resolved"
 }

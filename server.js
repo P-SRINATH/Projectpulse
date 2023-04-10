@@ -1,7 +1,11 @@
 //Create a Server using express
 require('dotenv').config();
 const app=require('express')()
+const helmet=require('helmet')
+app.use(helmet())
 PORT=process.env.PORT;
+const cors=require('cors')
+app.use(cors())
 app.listen(PORT,()=>console.log(`Server on port ${PORT}`))
 
 //connect to database

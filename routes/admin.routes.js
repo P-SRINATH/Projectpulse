@@ -6,14 +6,19 @@ const {
     getProjectConcerns,
     getProjectUpdates,
     getProjectResources,
-    getProjectSpecificDetails
+    getProjectSpecificDetails,
+    deleteProject
 }=require("../controllers/admin.controller");
+const verifyAdminToken = require("../middleware/verifyadmintoken");
  
 GdoApp.use(exp.json())
 const verifyadmintoken=require('../middleware/verifyadmintoken')
 
 //For the GDO head to create project
 GdoApp.post('/createProject',verifyadmintoken,createProject)
+
+//For the GDO head to delete project
+GdoApp.delete('/deleteProject/:project_id',verifyAdminToken,deleteProject)
 
 //For a Admin to access all the project details 
 GdoApp.get('/getProjectDetails',verifyadmintoken,getProjectDetails)

@@ -18,6 +18,12 @@ const createProject=expressAsyncHandler(async(req,res)=>{
     res.status(200).send({message:"New project created"});
 })
 
+//Delete a Project
+const deleteProject=expressAsyncHandler(async(req,res)=>{
+    await Projects.destroy({where:{project_id:req.params.project_id}})
+    res.status(200).send({message:"Project Deleted Successfully"});
+})
+
 //Get Project Details
 const getProjectDetails=expressAsyncHandler(async(req,res)=>{
     let allprojects=await Projects.findAll();
@@ -74,6 +80,7 @@ const adminapp={
     getProjectConcerns,
     getProjectUpdates,
     getProjectResources,
-    getProjectSpecificDetails
+    getProjectSpecificDetails,
+    deleteProject
 }
 module.exports=adminapp;

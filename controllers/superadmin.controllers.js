@@ -46,11 +46,11 @@ const viewAllUsers=expressAsyncHandler(async(req,res)=>{
 const createUserRole=expressAsyncHandler(async(req,res)=>{
     let finduser=await User.findOne({where:{user_email:req.body.user_email}})
     if(finduser==undefined){
-        res.status(404).send({message:"No user Found!"})
+        res.status(200).send({message:"No user Found!"})
     }
     else{
         await User.update(req.body,{where:{user_email:req.body.user_email}})
-        res.status(201).send({message:"Updated user Role successfully"});
+        res.status(200).send({message:"Updated user Role successfully"});
     }
 })
 

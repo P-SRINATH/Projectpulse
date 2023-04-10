@@ -30,10 +30,10 @@ ProjectManagerApp.get('/getProjectUpdates',verifyPMtoken,getProjectUpdates)
 ProjectManagerApp.get('/getProjectByManager/:email',verifyPMtoken,getProjectsByManager)
 
 //PM route to update the project concerns
-ProjectManagerApp.put('/updateProjectConcerns',verifyPMtoken,updateProjectConcerns)
+ProjectManagerApp.put('/updateProjectConcerns/:id',verifyPMtoken,updateProjectConcerns)
 
 //PM route to update the project Updates
-ProjectManagerApp.put('/updateProjectUpdates',verifyPMtoken,updateProjectUpdates)
+ProjectManagerApp.put('/updateProjectUpdates/:id',verifyPMtoken,updateProjectUpdates)
 
 //PM route to get specific project Details
 ProjectManagerApp.get('/getSpecificProjectDetails/:email/:project_id',verifyPMtoken,getSpecificProjectDetails)

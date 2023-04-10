@@ -30,14 +30,14 @@ const registerUser=expressAsyncHandler(async(req,res)=>{
   let userExistenceInWal = await Employee.findOne({where:{employee_email:user_email}});
   // if the user is not existed in our company then restrict the resgitration process
   if (userExistenceInWal==undefined) {
-    res.status(401).send({message: "Unauthorized access" });
+    res.status(200).send({alertMessage: "Unauthorized access" });
   }
   else {
     // check if the employee already exists with that email
     let userRecord = await User.findOne({where:{user_email:user_email}});
     // if user found already
     if (userRecord!= undefined) {
-      res.status(200).send({ message: "User already found with that email" });
+      res.status(200).send({ alertMessage: "User already found with that email" });
     }
     // if user not exists
     else {
@@ -58,14 +58,14 @@ const loginUser=expressAsyncHandler(async(req,res)=>{
     let userRecord = await User.findOne({where: {user_email:user_email}});
     // if user not found
     if (userRecord == undefined) {
-      res.status(401).send({ message: `User not found with email ${user_email}`});
+      res.status(200).send({ message: `User not found with email ${user_email}`});
     }
     // if user found check password
     else {
       let checkPassword = await bcryptjs.compare(user_password,userRecord.dataValues.user_password);
       // if password not matched
       if (!checkPassword) {
-        res.status(404).send({ message: "Incorrect password" });
+        res.status(200).send({ message: "Incorrect password" });
       } else {
         // create a jwt token
         let signedToken = jwt.sign(
@@ -78,7 +78,7 @@ const loginUser=expressAsyncHandler(async(req,res)=>{
             expiresIn: "1d",
           }
         );
-        res.status(200).send({ message: "Login successfull", payload: signedToken });
+        res.status(200).send({ message: "Login successfull", payload: signedToken ,user:userRecord});
       }
     }
    
@@ -117,10 +117,14 @@ const forgotPassword=expressAsyncHandler(async(req,res)=>{
 //Reset Password Option to Reset the password
 const resetPassword=expressAsyncHandler(async(req,res)=>{
   // checking if the otp is valid
-  if (req.body.otp == otps[req.params.email]) {
+  if (req.body.otp == otps[req.body.email]) {
+    console.log(otps);
+
     let hashedPassword = await bcryptjs.hash(req.body.password, 10);
-    await User.update({user_password: hashedPassword },{where: {user_email: req.params.email}});
-      res.status(201).send({ message: "Password reset sucessfully" });
+
+    let update=await User.update({user_password: hashedPassword },{where: {user_email: req.body.email}});
+    console.log("Updated",update)  
+    res.status(201).send({ message: "Password reset sucessfully" });
     }
     // else
     else {

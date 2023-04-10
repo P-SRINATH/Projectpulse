@@ -92,13 +92,12 @@ const getProjectsByManager=expressAsyncHandler(async(req,res)=>{
 
 //Updating the project Concerns
 const updateProjectConcerns=expressAsyncHandler(async(req,res)=>{
-    let getprojectconcern=await ProjectConcerns.findOne({where:{id:req.body.id}})
+    let getprojectconcern=await ProjectConcerns.findOne({where:{id:req.params.id}})
     if(getprojectconcern==undefined){
         res.status(404).send({message:"There is no Project Concern raised with the given id "})
     }
     else{
-        await ProjectConcerns.update({concern_description:req.body.concern_description,concern_raised_internally:req.body.concern_raised_internally,status_of_concern:req.body.status_of_concern}
-            ,{where:{id:req.body.id}})
+        await ProjectConcerns.update(req.body,{where:{id:req.params.id}})
         res.status(201).send({message:"Concern Updated successfully"});
     }
 })
