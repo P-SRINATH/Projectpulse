@@ -121,7 +121,16 @@ const resourceRequest = expressAsyncHandler(async (req, res) => {
 
 //To display the Resouces requested
 const displayResourceRequest = expressAsyncHandler(async (req, res) => {
-  let disdata = await sequelize.query("select * from res_request");
+  let gdohead = await Projects.findAll({
+    where: { gdoemail: req.params.gdoemail },
+  });
+  let project = gdohead.map((projects) => projects.dataValues.project_id);
+  let disdata = await sequelize.query(
+    "select * from res_request where project_id in(?)",
+    {
+      replacements: [project],
+    }
+  );
   res.status(200).send({ message: "Data is : ", payload: disdata[0] });
 });
 

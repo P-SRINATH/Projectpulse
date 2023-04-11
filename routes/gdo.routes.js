@@ -30,6 +30,10 @@ GdoApp.get(
 GdoApp.post("/resourceRequest", verifyGDOToken, resourceRequest);
 
 //GDO Head to view the resources requested
-GdoApp.get("/displayResourceRequest", verifyGDOToken, displayResourceRequest);
+GdoApp.get(
+  "/displayResourceRequest/:gdoemail",
+  verifyGDOToken,
+  displayResourceRequest
+);
 
 module.exports = GdoApp;
